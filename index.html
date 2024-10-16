@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft 2D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- UI Elements -->
+  <div id="ui">
+    <div id="status-bar">
+      <div id="health-bar" class="status-bar">
+        <img src="assets/icons/health.png" alt="Health" class="status-icon">
+        <div id="health-amount">20</div>
+      </div>
+      <div id="hunger-bar" class="status-bar">
+        <img src="assets/icons/hunger.png" alt="Hunger" class="status-icon">
+        <div id="hunger-amount">20</div>
+      </div>
+    </div>
+    <div id="hotbar">
+      <!-- 9 Hotbar Slots -->
+      <div class="hotbar-slot" data-slot="0"></div>
+      <div class="hotbar-slot" data-slot="1"></div>
+      <div class="hotbar-slot" data-slot="2"></div>
+      <div class="hotbar-slot" data-slot="3"></div>
+      <div class="hotbar-slot selected" data-slot="4"></div> <!-- Default selected slot -->
+      <div class="hotbar-slot" data-slot="5"></div>
+      <div class="hotbar-slot" data-slot="6"></div>
+      <div class="hotbar-slot" data-slot="7"></div>
+      <div class="hotbar-slot" data-slot="8"></div>
+    </div>
+    <div id="inventory" class="hidden">
+      <!-- 27 Inventory Slots (3 rows x 9 columns) -->
+      <div class="inventory-row">
+        <div class="inventory-slot" data-slot="0"></div>
+        <div class="inventory-slot" data-slot="1"></div>
+        <div class="inventory-slot" data-slot="2"></div>
+        <div class="inventory-slot" data-slot="3"></div>
+        <div class="inventory-slot" data-slot="4"></div>
+        <div class="inventory-slot" data-slot="5"></div>
+        <div class="inventory-slot" data-slot="6"></div>
+        <div class="inventory-slot" data-slot="7"></div>
+        <div class="inventory-slot" data-slot="8"></div>
+      </div>
+      <div class="inventory-row">
+        <div class="inventory-slot" data-slot="9"></div>
+        <div class="inventory-slot" data-slot="10"></div>
+        <div class="inventory-slot" data-slot="11"></div>
+        <div class="inventory-slot" data-slot="12"></div>
+        <div class="inventory-slot" data-slot="13"></div>
+        <div class="inventory-slot" data-slot="14"></div>
+        <div class="inventory-slot" data-slot="15"></div>
+        <div class="inventory-slot" data-slot="16"></div>
+        <div class="inventory-slot" data-slot="17"></div>
+      </div>
+      <div class="inventory-row">
+        <div class="inventory-slot" data-slot="18"></div>
+        <div class="inventory-slot" data-slot="19"></div>
+        <div class="inventory-slot" data-slot="20"></div>
+        <div class="inventory-slot" data-slot="21"></div>
+        <div class="inventory-slot" data-slot="22"></div>
+        <div class="inventory-slot" data-slot="23"></div>
+        <div class="inventory-slot" data-slot="24"></div>
+        <div class="inventory-slot" data-slot="25"></div>
+        <div class="inventory-slot" data-slot="26"></div>
+      </div>
+    </div>
+    <!-- Крафтинг-меню (опционально) -->
+    <div id="crafting-menu" class="hidden">
+      <!-- Элементы для крафтинга -->
+      <!-- Например, сетка рецептов -->
+    </div>
+  </div>
+
+  <!-- Подключение библиотеки SimplexNoise -->
+  <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
+
+  <!-- Подключение скриптов в правильном порядке -->
+  <script src="block.js"></script>
+  <script src="player.js"></script>
+  <script src="mob.js"></script>
+  <script src="inventory.js"></script>
+  <script src="crafting.js"></script>
+  <script src="ui.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
